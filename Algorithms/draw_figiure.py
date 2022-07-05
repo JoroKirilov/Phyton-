@@ -5,6 +5,5 @@ def draw_figiure(n):
     draw_figiure(n - 1)
     print('*' * n)
 
-
 n = int(input())
 draw_figiure(n)
