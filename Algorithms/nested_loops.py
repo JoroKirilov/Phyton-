@@ -1,12 +1,26 @@
-def nested_loops (idx , arr):
-    if idx >= len(arr):
-        print(*arr, sep=' ')
-        return
-    for num in range(1, n + 1):
-        arr[idx] = num
-        nested_loops(idx + 1, arr)
+class Weapon:
+    def __init__(self, bullets):
+        self.bullets = bullets
 
-n = int(input())
+    def shoot(self):
+        if self.bullets > 0 :
+            self.bullets -= 1
+            return "shooting..."
+        elif self.bullets == 0 :
+            return "no bullets left"
+    def __repr__(self):
+        return f"Remaining bullets : {self.bullets}"
 
-arr = [None] * n
-nested_loops (0 , arr)
+weapon = Weapon(10)
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon.shoot())
+print(weapon)
