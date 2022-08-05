@@ -1,4 +1,4 @@
-def gen01(idx , vector):
+def gen01(idx, vector):
     if idx >= len(vector):
         print(*vector, sep=' ')
         return
