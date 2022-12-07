@@ -28,12 +28,30 @@
 #     print("While loop ended successfully")
 
 
-starting_point = 20
-while starting_point < 30:
-    print("I'm in while loop with break")
-    if starting_point >= 25:
-        print("We hit the break")
-        break;
-    starting_point += 1
-else:
-    print("WHILE LOOP ENDED SUCCESSFULLY")
+# starting_point = 20
+# while starting_point < 30:
+#     print("I'm in while loop with break")
+#     if starting_point >= 25:
+#         print("We hit the break")
+#         break;
+#     starting_point += 1
+# else:
+#     print("WHILE LOOP ENDED SUCCESSFULLY")
+
+# while True:
+#     # define some retry logic
+#     break
+
+# for c in [-4, 0, 3, 19]:
+#     print('\ninitial c =', c)
+#
+#     count = 0
+#
+#     while 5 > c >= 0:
+#         print('c =', c)
+#
+#         c += 1
+#         count += 1
+#     else:
+#         if c == count == 5:
+#             print('normal termination. c=', c)
