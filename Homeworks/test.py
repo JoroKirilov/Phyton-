@@ -1,5 +1,8 @@
-n = 4
-if n < 4:
-    print("True")
-else:
-    print("False")
+# max number of three numbers
+a = int(input())
+b = int(input())
+c = int(input())
+
+print(max(a, b, c))
+
+
