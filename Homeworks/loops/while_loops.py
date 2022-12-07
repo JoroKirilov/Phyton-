@@ -56,3 +56,17 @@
 #         if c == count == 5:
 #             print('normal termination. c=', c)
 
+a = 0
+
+# while a < 10:
+#     b = 0
+#     while b < 10:
+#         c = 0
+#         while c < 10:
+#             print('{}{}{}'.format(a, b, c))
+#             pass
+#             c += 1
+#         b += 1
+#     a += 1
+# else:
+#     print('normal termination')
