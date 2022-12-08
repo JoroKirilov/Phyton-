@@ -1,13 +1,13 @@
 n = int(input())
 count = 0
 while count < n:
-    string1 = input()
+    str = input()
     counterChars = 0
-    for char in string1:
+    for char in str:
         if char != '_' and char != '.' and char != ',':
             counterChars += 1
-    if counterChars == len(string1):
-        print(f"{string1} is pure.")
+    if counterChars == len(str):
+        print(f"{str} is pure.")
     else:
-        print(f"{string1} is not pure!")
+        print(f"{str} is not pure!")
     n += 1
