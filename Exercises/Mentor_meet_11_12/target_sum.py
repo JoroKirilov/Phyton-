@@ -10,7 +10,7 @@ def tripple_nums(items, target):
     return result
 
 
-lst = [500, 400, 250, 250]
-target = 1000
+lst = [12, 3, 1, 2, -6, 5, -8, 6]
+target = 0
 
 print(sorted(tripple_nums(lst, target)))
