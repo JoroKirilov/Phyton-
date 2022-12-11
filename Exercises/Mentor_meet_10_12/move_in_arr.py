@@ -17,5 +17,5 @@ def some_sort(arr, number):
 
 
 my_array = [2, 1, 2, 2, 2, 3, 4, 2]
-to_move = 1
+to_move = 2
 some_sort(my_array, to_move)
