@@ -1,14 +1,13 @@
 nums = [int(el) for el in input().split()]
-command = input().split()
+data = input()
 my_list = list()
-while not command[0] == 'end':
-    if command[0] != 'remove':
-        fromIndex = int(command[2])
-        countIndex = int(command[4])
-        first_part = nums[:fromIndex]
-        exact_part = nums[fromIndex:(countIndex + fromIndex)]
-        last_part = nums[(countIndex + fromIndex):]
-        if command[0] == 'reverse':
+while not data == 'end':
+    command, _, fromIndex, _, countIndex = data.split()
+    if command != 'remove':
+        first_part = nums[:int(fromIndex)]
+        exact_part = nums[int(fromIndex):(int(countIndex) + int(fromIndex))]
+        last_part = nums[(int(countIndex) + int(fromIndex)):]
+        if command == 'reverse':
             exact_part.reverse()
         else:
             exact_part.sort()
@@ -23,6 +22,6 @@ while not command[0] == 'end':
         toIndexToRemove = int(command[1])
         my_list = nums[toIndexToRemove:]
 
-    command = input().split()
+    data = input()
 
 print(my_list)
