@@ -13,6 +13,3 @@ while len(list_name) < int(number_of_names):
 
 list_name.sort()
 print(list_name)
-
-
-
