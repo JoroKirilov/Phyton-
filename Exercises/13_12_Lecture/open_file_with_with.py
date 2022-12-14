@@ -9,7 +9,5 @@ current_directory = Path(os.path.abspath(__file__)).parent
 with open(os.path.join(current_directory, "students_exams.csv"), "r") as csv_source:
     reader = csv.reader(csv_source)
 
-    for student_id, number, score in reader:
-        if :
-            continue
+    for row in reader:
         print(row)
