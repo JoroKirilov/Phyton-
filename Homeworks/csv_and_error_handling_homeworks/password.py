@@ -9,7 +9,7 @@
 
 import re
 
-pattern = "^.*(?=.{6,32})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$"
+pattern = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,32}$"
 password = input("Enter string to test: ")
 result = re.findall(pattern, password)
 
