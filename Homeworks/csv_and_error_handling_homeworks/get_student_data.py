@@ -16,7 +16,7 @@ def get_students_data(file_name):
             if not all([student_id, num_exam, score]):
                 continue
             data_student.setdefault(student_id, {})
-            data_student[student_id] = {num_exam: score}
+            data_student[student_id].update({num_exam: score})
 
     return data_student
 

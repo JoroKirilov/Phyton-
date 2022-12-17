@@ -3,7 +3,6 @@
 #     return math.sqrt(number)
 import math
 
-
 def get_sqrt(number):
     return math.sqrt(number)
 

@@ -23,6 +23,6 @@ def search_in_arr(arr, search_num):
 
 
 array = [0, 1, 21, 33, 45, 45, 61, 71, 72, 73]
-target = 32
+target = 33
 print(len(array))
 print(search_in_arr(array, target))

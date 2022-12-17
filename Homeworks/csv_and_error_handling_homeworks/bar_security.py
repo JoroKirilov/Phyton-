@@ -7,11 +7,11 @@ def set_entry_checker():
 #     # As an output print out the users count from each group, and also print the VIPs
 #     # Example input: (Georgi 28, VIP) OR (Alex 25)
 #     pass
+
     group_info = {}
     people_in_group = 0
     vip_in_group = 0
-    print("Give me first name , age and VIP status\n")
-    data = input().split()
+    data = input("Give me first name , age and VIP status\n").split()
     if len(data) > 2:
         vip_in_group += 1
     name = data[0]
