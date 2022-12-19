@@ -6,4 +6,5 @@ def power(x, y=2):
     return result
 
 
+
 print(power(3))
