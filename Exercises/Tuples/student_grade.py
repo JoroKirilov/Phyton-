@@ -8,7 +8,7 @@ for _ in range(n):
     data_student[name].append(score)
 
 for key, value in data_student.items():
-    print(f"{key} -> {' '.join(f'{el:.2f}' for el in value)} (avg: {sum(value)/len(value):.2f})")
+    print(f"{key} -> {' '.join([str(el) for el in value]):.23} (avg: {sum(value)/len(value):.2f})")
 
 
 
