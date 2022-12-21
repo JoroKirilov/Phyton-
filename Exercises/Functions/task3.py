@@ -1,7 +1,7 @@
 def calculator(command: str, number1: int, number2: int):
     result = 0
     if command == "multiply":
-        result = number1 - number2
+        result = number1 * number2
     if command == "divide":
         result = number1 // number2
     if command == "add":
