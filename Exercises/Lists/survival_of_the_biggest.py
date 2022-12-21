@@ -1,6 +1,6 @@
 def find_lowest_numbers(arr, num):
     tmp_list = []
-    sorted(arr, reverse=True)
+    arr = sorted(arr)
     for idx in range(num):
         tmp_list.append(arr[idx])
     return tmp_list
