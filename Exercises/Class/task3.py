@@ -35,3 +35,4 @@ for element in guests:
 
 print(party.name_of_attendees())
 print(party.drinks)
+
