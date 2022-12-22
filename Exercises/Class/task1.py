@@ -4,9 +4,12 @@ class Person():
         self.last_name = last_name
         self.age = age
 
+    def say_hi(self):
+        print(f"Say hello {self.last_name}")
 
 
 georgi = Person("Georgi", "Kirilov", 35)
 str = georgi.first_name
 num = georgi.age
 print(num)
+georgi.say_hi()
