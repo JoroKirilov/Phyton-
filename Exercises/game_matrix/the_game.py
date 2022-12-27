@@ -26,12 +26,49 @@ def print_matrix(ma):
 
 def place_player_mark(ma, selected_column_idx, player_mark):
     row = len(ma)
-    for index in range(row - 1, -1, -1):
-        if ma[index][selected_column_idx] == 0:
-            ma[index][selected_column_idx] = player_mark
+    current_row = 0
+    for row_index in range(row - 1, -1, -1):
+        if ma[row_index][selected_column_idx] == 0:
+            ma[row_index][selected_column_idx] = player_mark
+            current_row = row_index
             print_matrix(ma)
-            return
+            return row_index
     raise FullColumnError
+
+def check_is_winner(ma, row: int,col: int,current_player: int, need_to_win_num = 4):
+    count = 0
+    for step in range(need_to_win_num):
+        if (col + step) > (len(ma[0]) - 1):
+            break
+        if ma[row][col+step] == player:
+            count += 1
+    if count == 4:
+        print(f"Player {player} is win")
+        return True
+    else:
+        count = 0
+    for step in range(need_to_win_num):
+        if (col + step) == -1:
+            break
+        if ma[row][col - step] == player:
+            count += 1
+    if count == 4:
+        print(f"Player {player} is win")
+        return True
+    else:
+        count = 0
+    for step in range(need_to_win_num):
+        if (col + step) > (len(ma[0] - 1)) or ((row + step) > (len(ma) + 1)):
+            break
+        if ma[row + step][col + step] == player:
+            count += 1
+    if count == 4:
+        print(f"Player {player} is win")
+        return True
+    else:
+        count = 0
+
+
 
 
 rows_count = 6
@@ -46,7 +83,10 @@ while True:
     try:
         player_choice = int(input(f"Player {player} choice:")) - 1
         valid_choice(player_choice, cols_count - 1)
-        place_player_mark(matrix, player_choice, player)
+        row_index = place_player_mark(matrix, player_choice, player)
+        game_status = check_is_winner(matrix, row_index, player_choice, player)
+        if game_status:
+            break
     except InvalidChoice:
         print("Please enter valid choice")
         continue
