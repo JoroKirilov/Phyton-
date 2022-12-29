@@ -1,4 +1,4 @@
-# Place player marker on to spot
+
 class InvalidChoice(Exception):
     pass
 
@@ -35,38 +35,54 @@ def place_player_mark(ma, selected_column_idx, player_mark):
             return row_index
     raise FullColumnError
 
+def check_out_of_range(ma, row: int, col: int, current_player: int):
+    if col < 0 or col > (len(ma[0]) - 1) or row < 0 or row > len(ma) - 1:
+        return False
+    elif ma[row][col] == current_player:
+        return True
+
+
+
+
 def check_is_winner(ma, row: int,col: int,current_player: int, need_to_win_num = 4):
     count = 0
     for step in range(need_to_win_num):
         if (col + step) > (len(ma[0]) - 1):
             break
-        if ma[row][col+step] == player:
+        if ma[row][col+step] == current_player:
             count += 1
     if count == 4:
-        print(f"Player {player} is win")
         return True
     else:
         count = 0
     for step in range(need_to_win_num):
         if (col + step) == -1:
             break
-        if ma[row][col - step] == player:
+        if ma[row][col - step] == current_player:
             count += 1
     if count == 4:
-        print(f"Player {player} is win")
         return True
     else:
         count = 0
-    for step in range(need_to_win_num):
-        if (col + step) > (len(ma[0] - 1)) or ((row + step) > (len(ma) + 1)):
-            break
-        if ma[row + step][col + step] == player:
-            count += 1
-    if count == 4:
-        print(f"Player {player} is win")
-        return True
-    else:
-        count = 0
+    if row >= 3:
+        is_win_up = [ma[row - index][col] == current_player for index in range(need_to_win_num)]
+        if all(is_win_up):
+            return True
+
+        is_win_down = all([check_out_of_range(ma, row + index, col, player) for index in range(need_to_win_num)])
+        if is_win_down:
+            return True
+
+    # for step in range(need_to_win_num):
+    #     if (col + step) > (len(ma[0] - 1)) or ((row + step) > (len(ma) + 1)):
+    #         break
+    #     if ma[row + step][col + step] == player:
+    #         count += 1
+    # if count == 4:
+    #     print(f"Player {player} is win")
+    #     return True
+    # else:
+    #     count = 0
 
 
 
@@ -86,6 +102,7 @@ while True:
         row_index = place_player_mark(matrix, player_choice, player)
         game_status = check_is_winner(matrix, row_index, player_choice, player)
         if game_status:
+            print(f"Player {player} is win")
             break
     except InvalidChoice:
         print("Please enter valid choice")
