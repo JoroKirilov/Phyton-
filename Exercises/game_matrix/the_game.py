@@ -43,6 +43,37 @@ def check_out_of_range(ma, row: int, col: int, current_player: int):
         return False
 
 
+def diagonal_check(ma, row, col, player_sign):
+    count_true = 0
+    index = 1
+    while True:
+        try:
+            if ma[row - index][col - index] == player_sign:
+                count_true += 1
+                if count_true == 3:
+                    return True
+            else:
+                break
+        except IndexError:
+            break
+        index += 1
+
+    index = 1
+    while True:
+        try:
+            if ma[row + index][col + index] == player_sign:
+                count_true += 1
+                if count_true == 3:
+                    return True
+            else:
+                break
+        except IndexError:
+            break
+        index += 1
+
+
+
+
 def horizontal_check(ma, player_sign):
     count_to_win = 0
     for row in range(len(ma)):
@@ -67,10 +98,12 @@ def check_is_winner(ma, row: int, col: int, player: int, need_to_win_num=4):
     #     return True
     # else:
     #     count = 0
-    is_win_horizontal = horizontal_check(ma, player)
-    if is_win_horizontal:
+    is_win = horizontal_check(ma, player)
+    if is_win:
         return True
-
+    is_win = diagonal_check(ma, row, col, player)
+    if is_win:
+        return True
     is_win_down = [check_out_of_range(ma, row + index, col, player) for index in range(need_to_win_num)]
     if all(is_win_down):
         return True
@@ -82,15 +115,15 @@ def check_is_winner(ma, row: int, col: int, player: int, need_to_win_num=4):
     # if all(is_win_left):
     #     return True
 
-    is_win_left_diagonal = [check_out_of_range(ma, row + index, col - index, player) for index in
-                            range(need_to_win_num)]
-    if all(is_win_left_diagonal):
-        return True
-
-    is_win_right_diagonal = [check_out_of_range(ma, row + index, col + index, player) for index in
-                             range(need_to_win_num)]
-    if all(is_win_right_diagonal):
-        return True
+    # is_win_left_diagonal = [check_out_of_range(ma, row + index, col - index, player) for index in
+    #                         range(need_to_win_num)]
+    # if all(is_win_left_diagonal):
+    #     return True
+    #
+    # is_win_right_diagonal = [check_out_of_range(ma, row + index, col + index, player) for index in
+    #                          range(need_to_win_num)]
+    # if all(is_win_right_diagonal):
+    #     return True
 
 
 rows_count = 6
