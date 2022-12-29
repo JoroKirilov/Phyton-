@@ -1,4 +1,3 @@
-
 class InvalidChoice(Exception):
     pass
 
@@ -35,56 +34,63 @@ def place_player_mark(ma, selected_column_idx, player_mark):
             return row_index
     raise FullColumnError
 
+
 def check_out_of_range(ma, row: int, col: int, current_player: int):
-    if col < 0 or col > (len(ma[0]) - 1) or row < 0 or row > len(ma) - 1:
+    try:
+        if ma[row][col] == current_player:
+            return True
+    except IndexError:
         return False
-    elif ma[row][col] == current_player:
-        return True
 
 
+def horizontal_check(ma, player_sign):
+    count_to_win = 0
+    for row in range(len(ma)):
+        for col in range(len(ma[0])):
+            if ma[row][col] == player_sign:
+                count_to_win += 1
+                if count_to_win == 4:
+                    return True
+            else:
+                count_to_win = 0
+        count_to_win = 0
+    return False
 
-
-def check_is_winner(ma, row: int,col: int,current_player: int, need_to_win_num = 4):
-    count = 0
-    for step in range(need_to_win_num):
-        if (col + step) > (len(ma[0]) - 1):
-            break
-        if ma[row][col+step] == current_player:
-            count += 1
-    if count == 4:
-        return True
-    else:
-        count = 0
-    for step in range(need_to_win_num):
-        if (col + step) == -1:
-            break
-        if ma[row][col - step] == current_player:
-            count += 1
-    if count == 4:
-        return True
-    else:
-        count = 0
-    if row >= 3:
-        is_win_up = [ma[row - index][col] == current_player for index in range(need_to_win_num)]
-        if all(is_win_up):
-            return True
-
-        is_win_down = all([check_out_of_range(ma, row + index, col, player) for index in range(need_to_win_num)])
-        if is_win_down:
-            return True
-
+def check_is_winner(ma, row: int, col: int, player: int, need_to_win_num=4):
+    # count = 0
     # for step in range(need_to_win_num):
-    #     if (col + step) > (len(ma[0] - 1)) or ((row + step) > (len(ma) + 1)):
+    #     if (col + step) > (len(ma[0]) - 1):
     #         break
-    #     if ma[row + step][col + step] == player:
+    #     if ma[row][col+step] == current_player:
     #         count += 1
     # if count == 4:
-    #     print(f"Player {player} is win")
     #     return True
     # else:
     #     count = 0
+    is_win_horizontal = horizontal_check(ma, player)
+    if is_win_horizontal:
+        return True
 
+    is_win_down = [check_out_of_range(ma, row + index, col, player) for index in range(need_to_win_num)]
+    if all(is_win_down):
+        return True
+    # is_win_right = [check_out_of_range(ma, row, col + index, player) for index in range(need_to_win_num)]
+    #
+    # if all(is_win_right):
+    #     return True
+    # is_win_left = [check_out_of_range(ma, row, col - index, player) for index in range(need_to_win_num)]
+    # if all(is_win_left):
+    #     return True
 
+    is_win_left_diagonal = [check_out_of_range(ma, row + index, col - index, player) for index in
+                            range(need_to_win_num)]
+    if all(is_win_left_diagonal):
+        return True
+
+    is_win_right_diagonal = [check_out_of_range(ma, row + index, col + index, player) for index in
+                             range(need_to_win_num)]
+    if all(is_win_right_diagonal):
+        return True
 
 
 rows_count = 6
