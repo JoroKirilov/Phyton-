@@ -16,4 +16,7 @@ def locate_num(search_num, fibunachi_seq_number):
         return print("not in the sequence")
 
 
-print(locate_num(13 , 10))
+dict_mapper = {
+    'Create': make_seq,
+    'Locate': locate_num
+}
