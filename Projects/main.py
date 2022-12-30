@@ -1,4 +1,6 @@
 from helper.mapper import operations
+
+
 class Player:
     def __init__(self, name, sign):
         self.name = name
@@ -29,6 +31,7 @@ def print_board(matrix):
     print(f"| {matrix[1][0]} | {matrix[1][1]} | {matrix[1][2]} |")
     print(f"| {matrix[2][0]} | {matrix[2][1]} | {matrix[2][2]} |")
 
+
 def is_valid_position(ma, pos):
     if pos < 1 or pos > 9:
         return False
@@ -38,6 +41,39 @@ def is_valid_position(ma, pos):
     return True
 
 
+def mark_slot(ma, pos, sign):
+    row, cow = operations[pos]
+    ma[row][cow] = sign
+
+
+def is_winner(ma, sign):
+    # check rows
+    for row in ma:
+        if all([x == sign for x in row]):
+            return True
+    # check cols
+    for col in range(len(ma)):
+        is_win = True
+        for row in range(len(ma)):
+            if ma[row][col] != sign:
+                is_win = False
+                break
+        if is_win:
+            return True
+
+    # check right diagonal
+    is_win = True
+    for index in range(len(ma)):
+        if ma[index][index] != sign:
+            is_win = False
+            break
+    if is_win:
+        return True
+
+    # check left diagonal
+    is_win = True
+    for index in range(len(ma))
+        if ma[index]
 
 first_player, second_player = read_players()
 
@@ -48,10 +84,18 @@ print(f'{first_player.name} starts first')
 board = [[' ' for _ in range(3)] for _ in range(3)]
 
 turn = 0
+
 while True:
     current_player = first_player if turn % 2 == 0 else second_player
     print_board(board)
     position = int(input(f'{current_player.name} choose your position from 1-9.'))
     if not is_valid_position(board, position):
         continue
+    mark_slot(board, position, current_player.sign)
+    if is_winner(board, current_player.sign):
+        print(f'{current_player.name} has won')
+        print_board(board)
+        break
+    else:
+        print('draw')
     turn += 1
