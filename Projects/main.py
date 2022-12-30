@@ -72,8 +72,12 @@ def is_winner(ma, sign):
 
     # check left diagonal
     is_win = True
-    for index in range(len(ma))
-        if ma[index]
+    for index in range(len(ma)):
+        if ma[(len(ma) - 1) - index][(len(ma) - 1) - index] != sign:
+            is_win = False
+    if is_win:
+        return True
+
 
 first_player, second_player = read_players()
 
