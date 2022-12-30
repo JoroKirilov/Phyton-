@@ -1,3 +1,4 @@
+from helper.mapper import operations
 class Player:
     def __init__(self, name, sign):
         self.name = name
@@ -23,9 +24,34 @@ def print_board_numeration():
     print("| 7 | 8 | 9 |")
 
 
+def print_board(matrix):
+    print(f"| {matrix[0][0]} | {matrix[0][1]} | {matrix[0][2]} |")
+    print(f"| {matrix[1][0]} | {matrix[1][1]} | {matrix[1][2]} |")
+    print(f"| {matrix[2][0]} | {matrix[2][1]} | {matrix[2][2]} |")
+
+def is_valid_position(ma, pos):
+    if pos < 1 or pos > 9:
+        return False
+    row, col = operations[pos]
+    if ma[row][col] != ' ':
+        return False
+    return True
+
+
 
 first_player, second_player = read_players()
 
 print_board_numeration()
 
 print(f'{first_player.name} starts first')
+
+board = [[' ' for _ in range(3)] for _ in range(3)]
+
+turn = 0
+while True:
+    current_player = first_player if turn % 2 == 0 else second_player
+    print_board(board)
+    position = int(input(f'{current_player.name} choose your position from 1-9.'))
+    if not is_valid_position(board, position):
+        continue
+    turn += 1
