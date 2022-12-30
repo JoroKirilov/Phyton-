@@ -38,8 +38,9 @@ def print_table(table):
 
 
 def check_horizontal_and_vertical(ma, sign):
-    count = 0
+
     for i in range(3):
+        count = 0
         for j in range(3):
             if ma[i][j] == sign:
                 count += 1
@@ -47,8 +48,9 @@ def check_horizontal_and_vertical(ma, sign):
                     return True
             else:
                 break
-    count = 0
+
     for i in range(3):
+        count = 0
         for j in range(3):
             if ma[j][i] == sign:
                 count += 1
