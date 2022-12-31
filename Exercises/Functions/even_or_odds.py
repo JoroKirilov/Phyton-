@@ -9,4 +9,4 @@ def even_odd(command: str, *args):
     return even_nums if command == 'even' else odd_nums
 
 
-print(even_odd(1, 2, 3, 4, 5, 6, "even"))
+print(even_odd("even", 1, 2, 3, 4, 5, 6 ))
