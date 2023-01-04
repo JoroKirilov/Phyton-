@@ -7,7 +7,8 @@ def integers():
 
 
 chain = integers()
-
+chain_list = list(chain)
+print(chain_list)
 # print(len(chain)) generator has no method len
 # for x in chain:
 #     print(x)
