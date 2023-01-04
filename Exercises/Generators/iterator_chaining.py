@@ -4,7 +4,9 @@ def integers():
 
 
 chain = integers()
+# print(len(chain)) generator has no method len
 print(list(chain))
+
 
 
 def squared(seq):
