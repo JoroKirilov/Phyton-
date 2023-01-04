@@ -5,7 +5,9 @@ def logged(function):
         result = function(*args)
         return text_result + f"\nit returned {result}"
     return wrapper
+
 @logged
 def sum_func(a, b):
     return a + b
+
 print(sum_func(1, 4))

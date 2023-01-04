@@ -1,11 +1,6 @@
 # 6
 # Please use only even numbers!
 
-
-
-
-
-
 def even_parameters(func):
     def wrapper(*args):
         for arg in args:
@@ -18,5 +13,5 @@ def even_parameters(func):
 def add(a, b):
     return a + b
 
-print(add("2", 4))
+print(add(2, 4))
 print(add("Peter", "1"))
