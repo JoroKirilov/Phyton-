@@ -1,3 +1,6 @@
+from itertools import tee
+
+
 def integers():
     for i in range(1, 9):
         yield i
@@ -5,25 +8,35 @@ def integers():
 
 chain = integers()
 # print(len(chain)) generator has no method len
-print(list(chain))
+# for x in chain:
+#     print(x)
+# for x in chain:   # second time don't print, because the generator is exucite one time only
+#     print(x)      # there is no data anymore
 
-
-
-def squared(seq):
-    for i in seq:
-        yield i ** 2
-
-
-chain = squared(integers())
-print(list(chain))
-
-
-def negated(seq):
-    for i in seq:
-        yield -i
-
-
-chain = negated(squared(integers()))
-print(list(chain))
-
-
+a, b = tee(range(5))  # duplicate iterator object
+for i in a:
+    print(i)
+for i in a:
+    print(i)
+# def squared(seq):
+#     for i in seq:
+#         yield i ** 2
+#
+#
+# chain = squared(integers())
+# print(list(chain))
+#
+#
+# def negated(seq):
+#     for i in seq:
+#         yield -i
+#
+#
+# chain = negated(squared(integers()))
+# print(list(chain))
+#
+# integer = range(8)
+# squared = (i*i for i in range(8))
+# print(integer)
+# for i in squared:
+#     print(i)
