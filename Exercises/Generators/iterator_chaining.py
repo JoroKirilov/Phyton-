@@ -7,6 +7,7 @@ def integers():
 
 
 chain = integers()
+
 # print(len(chain)) generator has no method len
 # for x in chain:
 #     print(x)
@@ -14,10 +15,12 @@ chain = integers()
 #     print(x)      # there is no data anymore
 
 a, b = tee(range(5))  # duplicate iterator object
-for i in a:
+for i in a:            # make to generators to use
     print(i)
-for i in a:
+for i in b:
     print(i)
+
+
 # def squared(seq):
 #     for i in seq:
 #         yield i ** 2
