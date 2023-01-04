@@ -11,24 +11,24 @@ import operator
 BASE_DIR = Path(os.path.abspath(__file__)).parent
 
 
-# def test_file_generator(
-#     file_name="decorator_example.csv",
-#     min_rows=32,
-#     max_rows=64,
-#     min_cols=random.randint(3, 8),
-#     max_cols=random.randint(12, 18),
-# ):
-#     with open(os.path.join(BASE_DIR, file_name), "w") as csv_output:
-#         writer = csv.writer(csv_output)
-#         number_of_rows = random.randint(min_rows, max_rows)
-#
-#         for _ in range(number_of_rows):
-#             number_of_columns = random.randint(min_cols, max_cols)
-#             row_data = [
-#                 "".join([random.choice(string.ascii_letters) for _ in range(2)])
-#                 for _ in range(number_of_columns)
-#             ]
-#             writer.writerow(row_data)
+def test_file_generator(
+    file_name="decorator_example.csv",
+    min_rows=32,
+    max_rows=64,
+    min_cols=random.randint(3, 8),
+    max_cols=random.randint(12, 18),
+):
+    with open(os.path.join(BASE_DIR, file_name), "w") as csv_output:
+        writer = csv.writer(csv_output)
+        number_of_rows = random.randint(min_rows, max_rows)
+
+        for _ in range(number_of_rows):
+            number_of_columns = random.randint(min_cols, max_cols)
+            row_data = [
+                "".join([random.choice(string.ascii_letters) for _ in range(2)])
+                for _ in range(number_of_columns)
+            ]
+            writer.writerow(row_data)
 
 
 def track_min_length_rows_of_a_csv_file(func):
@@ -118,7 +118,7 @@ def get_csv_file_content(file_path: Path):
     # Read the CSV file, using the file_path and return its content as list of lists
     try:
         # Check if file_path actually exists, if not exit with Message
-        with open(file_path, "r") as csv_source:
+        with open(file_path, "r", newline='') as csv_source:
             csv_content = csv.reader(csv_source)
             return list(csv_content)
     except FileNotFoundError:
@@ -128,7 +128,7 @@ def get_csv_file_content(file_path: Path):
 
 if __name__ == "__main__":
     file_name = "decorator_example.csv"
-    # test_file_generator()
+    test_file_generator()
     file_path_with_path_class = Path(os.path.join(BASE_DIR, file_name))
     print(
         f"CSV content of {file_path_with_path_class.name}:"
