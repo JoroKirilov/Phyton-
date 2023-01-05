@@ -20,4 +20,5 @@ def loop(start, end):
         total += x
     return total
 
-print(loop(1, 100000000))
+
+print(loop(1, 10000000))
