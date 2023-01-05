@@ -7,5 +7,3 @@ class Fruit(Food):
         self.name = name
 
 
-fruit1 = Fruit("apple", "23.01.78")
-print(fruit1.expiration_data)
