@@ -8,9 +8,8 @@ class Person:
         self.name = name
         self.age = age
 
-
-    def say_hello:
-        print("Hello, from Georgi")
+    def say_hello(self):
+        print(f"Hello, from {self.name}")
 
 
 class Employer(Person):
