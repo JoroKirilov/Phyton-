@@ -7,25 +7,41 @@
 #
 #
 #          3, 4, 5
-
-
-
 my_list = [
-    [1, 2, [3, 4, [6]]],
-    [[], [], [3, 4, 5]]
+    [1,  2,  [3, 4, [6]]],
+    [[], [],  [3, 4, 5]]
 ]
 
-# list_dimension = []
-# for row in range(6):
-#     for col in range(6):
-#         for elem in range(6):
-#             if my_list[row][col][elem]:
-#                 list_dimension.append(my_list[row][col][elem])
-# print(list_dimension)
+count_white_spaces = 0
+white_space = " "
+for row in range(len(my_list)):
+    for col in range(len(my_list[0])):
+        if isinstance(my_list[row][col], int):
+            print(my_list[row][col], end=' ')
+            count_white_spaces += 1
+        elif isinstance(my_list[row][col], list):
+            if my_list[row][col]:
+                print("")
+                print((count_white_spaces + 1) * white_space, end='')
+                for elements in my_list[row][col]:
+                    if isinstance(elements, int):
+                        print(elements, end=' ')
+                        count_white_spaces += 1
+                    else:
+                        count_white_spaces += 1
+                        print("")
+                        print((count_white_spaces + 1)*white_space, end='')
+                        print("".join(map(str, elements)), end='')
+            elif not my_list[row][col]:
+                print("")
 
 
 
 
 
-print(my_list[0][2][2])
+
+
+
+
+
 
