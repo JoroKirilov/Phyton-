@@ -9,26 +9,23 @@
 #          3, 4, 5
 
 
+
 my_list = [
     [1, 2, [3, 4, [6]]],
     [[], [], [3, 4, 5]]
 ]
-new_list = []
-for i in range(len(my_list)):
-    for y in range(len(my_list[0])):
-        for x in range(my_list[0][0]):
-            if my_list[i][y][x]:
-                new_list.append("-")
-            else:
-                new_list.append("")
-print(new_list)
+
+# list_dimension = []
+# for row in range(6):
+#     for col in range(6):
+#         for elem in range(6):
+#             if my_list[row][col][elem]:
+#                 list_dimension.append(my_list[row][col][elem])
+# print(list_dimension)
+
+
 
 
 
 print(my_list[0][2][2])
 
-my_list1 = [
-    [1, 2],
-    [3, 4],
-    [5, 6],
-]

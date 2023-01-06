@@ -7,7 +7,7 @@ login_data = {
     "Georgi87": "LokoPlovdiv",
     "IvanIvanov": "svoshtov",
     "Pesho91": "sexbog91",
-    "1": "2"  # easy try program with this input
+    "1": "2"                 # easy try program with this input
 }
 
 
@@ -34,7 +34,7 @@ def login_required(func_ref):
     return wrapper
 
 
-@login_required
+@login_required        # When is required user and password
 def login():
     print("Wellcome")
     return True

@@ -27,7 +27,7 @@ def decreased_number(number_of_days, days_dict=None):
 beer_price = 11
 
 
-@decreased_number(6)
+@decreased_number(7)       # DAYS WHEN YOUR ARE GOOD TO BUY MORE BEER ( 2 , 5 , 7 )
 def set_price(price):
     return price
 
