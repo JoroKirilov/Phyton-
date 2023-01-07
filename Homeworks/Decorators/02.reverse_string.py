@@ -9,7 +9,6 @@ def reverse_with_reverse_method(text : str):
 
 
 def reverse_string(string: str):
-
     temp_str = ''
     for index in range(len(string) - 1, -1, -1):
         temp_str += string[index]
