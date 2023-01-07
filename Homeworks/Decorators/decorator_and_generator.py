@@ -19,7 +19,7 @@ def looking_glass(is_active=False):
     return decorator
 
 
-@looking_glass(is_active=True)
+@looking_glass(is_active=False)
 def print_name(*args):
     output_str = ", ".join(args)
     print(output_str)
