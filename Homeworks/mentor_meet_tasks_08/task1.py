@@ -11,5 +11,4 @@ for word in words:
     if rev_word in words_set:
         list_palindrome.append(word)
 
-
 print(list_palindrome)
