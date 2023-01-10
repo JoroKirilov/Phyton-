@@ -1,10 +1,14 @@
+import argparse
+
 def get_bigger_string(str1: str, str2: str):
     if len(str1) > len(str2):
         return str1, str2
     return str2, str1
 
 
-def compare_strings(text1: str, text2: str):
+def compare_strings(processed_output):
+    text1 = processed_output.string1
+    text2 = processed_output.string2
     if text1 == text2:
         return True
     str1_length = len(text1)
@@ -44,7 +48,16 @@ def compare_strings(text1: str, text2: str):
     return False
 
 
-str1 = "helo"
-str2 = "hello"
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Welcome to strings game")
+    parser.add_argument("string1", type=str, help="enter first string")
+    parser.add_argument("string2", type=str, help="enter second string")
+    parsed_args = parser.parse_args()
+    print(compare_strings(parsed_args))
 
-print(compare_strings(str1, str2))
+
+
+
+
+
+
