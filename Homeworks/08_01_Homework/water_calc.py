@@ -36,7 +36,7 @@ def water_calculate(water_bunker):
 
 water_list1 = [5, 0, 0, 2, 0, 0, 2, 0, 0, 5]
 water_list2 = [0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3]
-water_list3 = [0, 0, 4, 0, 0]
+water_list3 = [0, 100, 0, 0, 10, 1, 1, 10, 1, 0, 1, 1, 0, 0]
 print(water_calculate(water_list1))
 print(water_calculate(water_list2))
 print(water_calculate(water_list3))
