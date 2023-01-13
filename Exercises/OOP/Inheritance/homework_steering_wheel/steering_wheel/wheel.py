@@ -61,7 +61,7 @@ class SteeringWheel:
 
 
 airbag1 = Airbag("Safe system v2")
-radio_connector1 = RadioConnector("JVC", "TR102")
+radio_connector1 = RadioConnector("JVC", "TR1021")
 
 
 my_custom_steering_wheel = SteeringWheel("Black and white", 34, "Carbon", "Ellipse",
