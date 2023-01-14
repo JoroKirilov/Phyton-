@@ -1,5 +1,6 @@
-from Inheritance.homework_steering_wheel.steering_wheel.airbag import Airbag
-from Inheritance.homework_steering_wheel.steering_wheel.radio_connector import RadioConnector
+from steering_wheel.airbag import Airbag
+from steering_wheel.radio_connector import RadioConnector
+
 
 class SteeringWheel:
     def __init__(
@@ -67,6 +68,11 @@ radio_connector1 = RadioConnector("JVC", "TR1021")
 my_custom_steering_wheel = SteeringWheel("Black and white", 34, "Carbon", "Ellipse",
                                          airbag=airbag1, volume_control=True, radio_connector=radio_connector1)
 
+
+my_custom_steering_wheel.radio_connector.show_volume_level()
+my_custom_steering_wheel.show_volume_music_level()
+my_custom_steering_wheel.radio_connector.volume_down(100)
+my_custom_steering_wheel.decrease_volume(100)
 print(f"Color   : {my_custom_steering_wheel.color}")
 print(f"Form    : {my_custom_steering_wheel.form}")
 print(f"Diameter: {my_custom_steering_wheel.diameter}")
