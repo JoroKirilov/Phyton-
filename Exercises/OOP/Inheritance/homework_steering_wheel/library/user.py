@@ -4,8 +4,14 @@ class User:
         self.username = username
         self.books_rent = []
 
-        def info():
-            pass
+    def info(self, book: str):
+        # result = (', '.join(books))
+        # return result
+        return book
 
-        def __str__(self):
-           return f"{self.user_id}, {self.username}, {self.books_rent}"
+    def __str__(self):
+        return f"{self.user_id}, {self.username}, {self.books_rent}"
+
+    def take_book(self, book: str):
+        self.books_rent.append(book)
+        self.info(book)

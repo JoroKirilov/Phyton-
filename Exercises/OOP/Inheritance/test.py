@@ -1,2 +1,3 @@
-list1 = [1, 3 , 5, 6]
-print(list1)
+dict1 = {}
+dict1["Gosho"] = {"go": 34}
+print(dict1)
