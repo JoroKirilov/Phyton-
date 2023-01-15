@@ -8,7 +8,7 @@ def max_three(arr: list):
     tmp_list = []
     for elements in range(3):
         num = max(arr)
-        tmp_list.append(arr.pop(num))
+        tmp_list.append(num)
         arr.remove(num)
 
     sort_list = sorted(tmp_list)
