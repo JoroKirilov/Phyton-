@@ -17,7 +17,7 @@ class Registration:
 
     def change_username(self, user_id: int, new_username: str, library: Library ):
         for user in library.user_record:
-            if user_id in user.user_id:
+            if user_id == user.user_id:
                 user.username = new_username
                 break
         else:
