@@ -1,4 +1,4 @@
-from homework_steering_wheel.library.user import User
+from Inheritance.homework_steering_wheel.library.user import User
 
 
 class Library:
@@ -12,9 +12,9 @@ class Library:
             if book_name in self.books_available[author]:
                 user.take_book(book_name)
                 if user.username in self.rented_books:
-                    self.rented_books[user.username].update({book_name:days_to_return})
+                    self.rented_books[user.username].update({book_name: days_to_return})
                 else:
-                    self.rented_books = {user.username: {book_name:days_to_return}}
+                    self.rented_books = {user.username: {book_name: days_to_return}}
                 del self.books_available[book_name]
                 return f"{book_name} successfully rented for the next {days_to_return} days!"
         return f"The book {book_name} is already rented and will be available in {days_to_return} days rented by {user.username}!"
@@ -32,7 +32,8 @@ class Library:
                     del self.rented_books[key][book_name]
 
             user.books_rent.remove(book_name)
-
+        else:
+            print(f"{user.username} doesn't have this book in his/her records!")
 
 
 

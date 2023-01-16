@@ -10,7 +10,7 @@ class User:
         return book
 
     def __str__(self):
-        return f"{self.user_id}, {self.username}, {self.books_rent}"
+        return f"User : {self.user_id}, {self.username}, Books rented : {self.books_rent}"
 
     def take_book(self, book: str):
         self.books_rent.append(book)
