@@ -9,17 +9,21 @@ class Library:
 
     def get_book(self, author: str, book_name: str, days_to_return: int, user: User):
         if author in self.books_available:
-            for value in self.books_available[author]:
-                if value == book_name:
-                    user.take_book(book_name)
-                    del self.books_available[author][value]
-                    if user in self.rented_books:
-                        self.rented_books[user.username].update({book_name: days_to_return})
-                    else:
-                        self.rented_books = {user.username: {book_name: days_to_return}}
-
-            return f"{book_name} successfully rented for the next {days_to_return} days!"
-        return f"The book {book_name} is already rented and will be available in {days_to_return} days rented by {user.username}!"
+            if book_name in self.books_available[author]:
+                user.take_book(book_name)
+                self.books_available[author].remove(book_name)
+                print(f"{book_name} successfully rented for the next {days_to_return} days!")
+                if user in self.rented_books:
+                    self.rented_books[user.username].update({book_name: days_to_return})
+                else:
+                    self.rented_books = {user.username: {book_name: days_to_return}}
+            else:
+                for key, value in self.rented_books.items():
+                    for book in value.items():
+                        if book_name == book[0]:
+                            print(f"The book {book[0]} is already rented and will be available in {book[1]} days rented by {key} !")
+        else:
+            print("There is no such author")
 
     def return_book(self, author: str, book_name: str, user: User):
         if book_name in user.books_rent:

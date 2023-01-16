@@ -19,6 +19,7 @@ class Registration:
         for user in library.user_record:
             if user_id == user.user_id:
                 user.username = new_username
+                print(f"User with user id :{user.user_id} is successfully changed to user name : {new_username} ")
                 break
         else:
             print(f"There is no user with id = {user_id}")

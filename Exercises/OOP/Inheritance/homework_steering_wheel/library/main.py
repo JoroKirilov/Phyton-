@@ -8,8 +8,6 @@ library = Library()
 registration = Registration()
 registration.add_user(user1, library)
 registration.add_user(user2, library)
-registration.change_username(12, "Gopeto", library)
-registration.change_username(14, "Ivo", library)
 
 [print(f'{user_rec.user_id}, {user_rec.username}, {user_rec.books_rent}') for user_rec in library.user_record]
 
@@ -20,5 +18,17 @@ library.books_available.update({'J.K.Rowling': ['The Chamber of Secrets',
                                                 'The Half-Blood Prince',
                                                 'The Deathly Hallows']})
 
-library.get_book('J.K.Rowling', 'The Deathly Hallows', 17, user1)
-print(library.books_available)
+library.books_available.update({'John Smith': ['Money', 'Invest', 'Stocks']})
+
+
+library.get_book("John Smith", "Money", 20, user1)
+print(user1.books_rent)
+library.get_book("John Smith", "Money", 20, user2)
+library.get_book('John Smith', 'Invest', 20, user2)
+
+# registration.change_username(12, "Georgi Kirilov", library)
+
+
+for key, value in library.rented_books.items():
+    print(key)
+    print(value)
