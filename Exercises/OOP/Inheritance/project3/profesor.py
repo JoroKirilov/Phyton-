@@ -14,6 +14,6 @@ class Profesor(Student):
         self.discipline.append(disc)
 
 
-profesor1 = Profesor(("Math", 20, 8, 23345654, ))
+profesor1 = Profesor(("Math", 20, 8, 23345654, "Ivan", 45, "male", 122 ))
 profesor1.add_discipline("Algebra")
 profesor1.add_discipline("Geometry")
