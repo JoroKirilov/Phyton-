@@ -1,7 +1,12 @@
 class Profile:
-    def __init__(self, username: str, password: str):
+    def __init__(self, username: str, password: str, info: str):
         self.username = username
         self.password = password
+        # this check in constructor is not good practice, because checking is execute only when init the instance
+        if len(info) > 5:
+            self.info = info
+        else:
+            print("Too short info")
 
     @property
     def username(self):
@@ -32,7 +37,8 @@ class Profile:
         return fr'You have a profile with username: "{self.username}" and password: {"*"*len(self.__password)}'
 
 
-p = Profile("Georgi", "909dAADSDA")
-print(p.username)
-print(p.password)
+p = Profile("Georgi", "909dAADSDA", "Hi from me")
 print(p)
+p.info = "iva"
+print(p.info)
+
