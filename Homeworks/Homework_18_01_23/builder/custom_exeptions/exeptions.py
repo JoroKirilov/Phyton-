@@ -1,0 +1,2 @@
+class NoFreeSpace(Exception):
+    pass
