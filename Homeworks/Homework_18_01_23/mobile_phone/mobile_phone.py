@@ -1,3 +1,11 @@
+# MobilePhone - it should have some properties
+# manifacturer
+# make year
+# model
+# contacts - This should be represented by Contacts class, which should hold Contact instances,
+# let's say that a Contact must have name, phone, and should track number of calls
+# Contacts class should allow Contact editing, and dialing Contact.
+
 class Contact:
     def __init__(self, name: str, phone: str):
         self.name = name
