@@ -13,6 +13,13 @@ class Builder(Square):
         else:
             return False
 
+    def get_info_for_triangles(self):
+        tmp_str = ''
+        for index in range(len(self.triangles_list)):
+            tmp_str += f"triangle #{index + 1}: {self.triangles_list[index].kind_of_triangle_by_sides()}"
+            tmp_str += "\n"
+        return tmp_str
+
     def build_triangle(self, a, b, c):
         if self.__is_valid_triangle(a, b, c):
             if len(self.triangles_list) == 10:
@@ -40,10 +47,12 @@ class Builder(Square):
 
 
 b = Builder(100)
-b.build_triangle(10, 20, 20)   # CREATE TRIANGLE WITH BUILDER
-b.add_triangle_in_square()     # TRY TO ADD TRIANGLE IN SQUARE
-print(b.triangles_inside)      # LOOK HOW MANY TRIANGLE IN SQUARE
-b.add_triangle_in_square()     # TRY TO ADD TRIANGLE IN SQUARE, BUT THERE IS NO CREATE TRIANGLE
-print(b.check_area())          # GET THE SQUARE AREA
-b.build_triangle(20, 20, 20)
-
+b.build_triangle(10, 20, 20)  # CREATE TRIANGLE WITH BUILDER
+b.add_triangle_in_square()  # TRY TO ADD TRIANGLE IN SQUARE
+print(b.triangles_inside)  # LOOK HOW MANY TRIANGLE IN SQUARE
+b.add_triangle_in_square()  # TRY TO ADD TRIANGLE IN SQUARE, BUT THERE IS NO CREATE TRIANGLE
+print(b.check_area())  # GET THE SQUARE AREA
+b.build_triangle(20, 20, 20)  # CREATE ANOTHER TRIANGLE
+b.build_triangle(10, 10, 10)
+b.build_triangle(30, 30, 30)
+print(b.get_info_for_triangles())  # LOOK WHAT KIND OF TRIANGLES I BUILD
