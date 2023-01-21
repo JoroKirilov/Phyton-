@@ -46,6 +46,7 @@ class Builder(Square):
             print("No more triangle to add. You need to build some.")
 
 
+
 b = Builder(100)
 b.build_triangle(10, 20, 20)  # CREATE TRIANGLE WITH BUILDER
 b.add_triangle_in_square()  # TRY TO ADD TRIANGLE IN SQUARE
