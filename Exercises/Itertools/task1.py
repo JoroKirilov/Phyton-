@@ -62,4 +62,12 @@ import itertools
 # for i in result:
 #     print(i)
 
-# ------------------------------------------------------------------------
+# ----------------------chain----------------------------------
+
+letters= ["a", "b", "c"]
+digits = [1, 2, 3]
+names = ["Monica", "Veronica"]
+# combined = letters + digits + names
+combined = itertools.chain(letters,digits,names)
+for item in combined:
+    print(item)
