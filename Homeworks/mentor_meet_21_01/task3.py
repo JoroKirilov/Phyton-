@@ -9,7 +9,14 @@ class Person:
     def get_age(self):
         if len(self.__name) > 5:
             return self.__age
-
+    
+    @property
+    def (self):
+        return 
+    
+    @.setter
+    def (self, value):
+        pass
 
 p = Person("jOROff", 35)
 
