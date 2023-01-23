@@ -1,16 +1,25 @@
-# This is a sample Python script.
+import argparse
+from bs4 import BeautifulSoup
+import requests
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+req = requests.get("http://books.toscrape.com/catalogue/category/books_1/index.html")
+soup = BeautifulSoup(req.content, "html.parser")
+content = soup.find_all(class_="product_pod")
+content = str(content)
+print(content)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# if __name__ == "__main__":
+#     parser = argparse.ArgumentParser(description="Welcome to web scraper")
+#     parser.add_argument("-b", dest="genres", choices=GENRES, nargs="+", help="List of genres to search through")
+#     parser.add_argument("size", type=str, choices=SIZES.keys(), help='Size of your shirt')
+#     parser.add_argument('color', type=str, choices=COLORS.keys(), help="Color or your shirt")
+#     parser.add_argument('-l', '--logo', action='store_true', dest='logo', help="add logo to your shirt")
+#     parser.add_argument('--soft-fabric', action='store_true', dest='fabric', help='Makes your shirt softer')
+#     parser.add_argument('-c', '--custom', type=str, dest='custom', nargs="+", help='Customise your shirt')
+#     # parser.add_argument("-g", dest="genres", choices=GENRES, nargs="+", help="List of genres to search through")
+#     parsed_args = parser.parse_args()
+#     print(make_shirt(parsed_args))
