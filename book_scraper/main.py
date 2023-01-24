@@ -4,9 +4,9 @@ import requests
 
 req = requests.get("http://books.toscrape.com/catalogue/category/books_1/index.html")
 soup = BeautifulSoup(req.content, "html.parser")
-content = soup.find_all(class_="product_pod")
-content = str(content)
-print(content)
+content = soup.find_all(class_="col-xs-6 col-sm-4 col-md-3 col-lg-3")
+for cont in content:
+    print(cont.text)
 
 
 
