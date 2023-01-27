@@ -13,7 +13,6 @@ class BookCounter:
         self.__curr_number_of_books = 0
         self.__desired_number_of_books = number_of_desired_books
 
-
     def add_a_book(self, book):
         self.__list_of_books.append(book)
         self.__curr_number_of_books += 1
