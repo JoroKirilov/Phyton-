@@ -1,6 +1,8 @@
 from tkinter import *
 
-#start
+# https://www.tcl.tk/man/tcl8.6.13/TkCmd/entry.html
+
+# start
 window = Tk()
 # title of window
 window.title('Book scraper')
