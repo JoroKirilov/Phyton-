@@ -29,7 +29,30 @@ button.pack()
 # create entry
 entry1 = Entry(width=50)
 entry1.pack()
+entry1.insert(END, string='Change name of label1:')
 
+# create text BOX ( WHERE CAN WE ENTER TEXT
+text1 = Text()
+# focus is where cursor is when start program ( can be in only one place)
+text1.focus()
+text1.pack()
+text1.insert(END, "example text")  # INSERT DEFAULT TEXT
+print(text1.get("1.0", END))    # TRY TO GET TEXT
+
+def spinbox_get():
+    print(spinbox1.get())
+
+# create spinbox
+spinbox1 = Spinbox(from_=0, to=20, width=5, command=spinbox_get)
+spinbox1.pack()
+
+
+def scale_get(value):
+    print(value)
+
+# create scale
+scale1 = Scale(from_=0, to=100, command=scale_get)
+scale1.pack()
 
 
 window.mainloop()
