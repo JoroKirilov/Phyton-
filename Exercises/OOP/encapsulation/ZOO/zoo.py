@@ -26,6 +26,23 @@ class Zoo:
         self.workers.append(worker)
         return f"{worker.name} the {worker.__class__.__name__} is a new employee"
 
+    def fire_worker(self, worker_name: str):
+        for worker in self.workers:
+            if worker.name is worker_name:
+                self.workers.remove(worker)
+                return f"{worker_name} fired successfully"
+        return f"There is no worker with this name"
+
+    def pay_workers(self):
+        month_expenses = 0
+        for workers in self.workers:
+            month_expenses += workers.salary
+        if month_expenses > self.__budget:
+            return "Not enough money for salaries"
+        self.__budget -= month_expenses
+        return "Every worker get his salary"
+
+
 
 
 
