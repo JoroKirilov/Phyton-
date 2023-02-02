@@ -35,13 +35,21 @@ class Zoo:
 
     def pay_workers(self):
         month_expenses = 0
-        for workers in self.workers:
-            month_expenses += workers.salary
+        for worker in self.workers:
+            month_expenses += worker.salary
         if month_expenses > self.__budget:
             return "Not enough money for salaries"
         self.__budget -= month_expenses
         return "Every worker get his salary"
 
+    def tend_animals(self):
+        animal_month_care = 0
+        for animal in self.animal:
+            animal_month_care += animal.money_for_care
+        if animal_month_care > self.__budget:
+            return "Not enough money for animal care"
+        self.__budget -= animal_month_care
+        return "Every animal is in good condition"
 
 
 

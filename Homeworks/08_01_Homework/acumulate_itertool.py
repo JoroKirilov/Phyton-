@@ -8,3 +8,4 @@ def list_iter(num):
 
 result = list(itertools.accumulate(list_iter(10)))
 print(result)
+print("That is it")
