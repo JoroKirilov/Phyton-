@@ -1,5 +1,6 @@
 from decimal import Decimal
-from unittest import TestCase
+from unittest import TestCase, skip
+
 
 def sum_two_numbers(a, b):
     return a + b
@@ -19,3 +20,8 @@ class SimpleFunction(TestCase):
 
         self.assertRaises(TypeError, lambda: sum_two_numbers('4', 5))
         self.assertRaises(TypeError, lambda: sum_two_numbers(None, 6))
+
+
+    @skip("not ready yet")
+    def test_non_function(self):
+        self.assertEqual(sum_three_numbers(4, 5, 4), 13)
