@@ -44,3 +44,26 @@
 #     return numbers
 #
 # print(get_numbers([1, 2, 3, 4]))
+# from functools import wraps
+#
+#
+# def only_lower_case(function):
+#     @wraps(function)
+#     def wrapper(text):
+#         result = [char for char in text if char.islower()]
+#         return result
+#     return wrapper
+#
+#
+# @only_lower_case
+# def get_string(str1):
+#     """
+#     This function returns simply string
+#     :param str1:
+#     :return: str
+#     """
+#     return str1
+#
+# print(get_string("Ss"))
+# print(get_string.__name__)
+# print(get_string.__doc__)
