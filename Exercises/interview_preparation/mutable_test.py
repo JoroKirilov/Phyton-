@@ -15,12 +15,13 @@ print(list3)
 # del list77[0]
 # print(list77)
 # # ---------------------------------------------
-# # string are immutable
-# str1 = "hello"
-# str1 += "gg"
-# str2 = str1          # making a copy
-# srt2 = ''
-# print(str1)
+# string are immutable
+str1 = "hello"
+str1 += "gg"
+str2 = str1          # making a copy
+srt2 = ''
+print(str1)
+print(str2)
 
 # -------------------------------------------
 # int is immutable

@@ -1,4 +1,4 @@
-str1 = "afsaasa"
+str1 = "Aafsaasa"
 # count = 0
 # for char in str1:
 #     if char.isupper():

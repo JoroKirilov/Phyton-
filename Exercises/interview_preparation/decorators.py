@@ -67,3 +67,21 @@
 # print(get_string("Ss"))
 # print(get_string.__name__)
 # print(get_string.__doc__)
+
+
+# def login_reguired(is_required):
+#     def decorator(function):
+#         def wrapper():
+#             if is_required:
+#                 return function()
+#             else:
+#                 return 'no access'
+#         return wrapper
+#     return decorator
+#
+#
+# @login_reguired(is_required=True)
+# def print_pin():
+#     return "3333"
+#
+# print(print_pin())
