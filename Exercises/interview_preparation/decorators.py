@@ -13,6 +13,19 @@
 # print(get_letter())
 
 
+def lower_case(function):
+    def wrapper():
+        list1 = function()
+        return [a.lower() for a in list1]
+    return lower_case
+
+
+@lower_case
+def upper_case():
+    return ["A", "C", "W"]
+
+print(upper_case())
+
 # ----------- decorators that get arguments ---------------
 
 # def repeat(n):
@@ -85,3 +98,4 @@
 #     return "3333"
 #
 # print(print_pin())
+
