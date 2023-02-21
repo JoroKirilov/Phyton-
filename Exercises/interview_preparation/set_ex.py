@@ -23,4 +23,6 @@ set1.add(23)
 set1.add(12)
 set1.add(44)
 set1.add(14)
+set1.discard(400)    # safety remove
+# set1.remove(500)
 print(set1)
