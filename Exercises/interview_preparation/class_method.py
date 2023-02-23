@@ -67,7 +67,7 @@ class Room:
         self.is_taken = False
 
     def take_room(self, people):
-        if self.is_taken and self.capacity >= people:
+        if not self.is_taken and self.capacity >= people:
             self.is_taken = True
             self.guest = people
             return
@@ -81,15 +81,18 @@ class Room:
 
 
 class Hotel:
-    def __init__(self, name, stars):
-        self.stars = stars
+    capacity = 100
+
+    def __init__(self, name):
         self.name = name
         self.guest = 0
         self.rooms = []
 
     @classmethod
-    def from_stars(cls, start_count):
-        return cls(f"{start_count} stars Hotel", stars=5)
+    def five_star_hotel(cls):
+        cls.capacity = 200
+        cls.bar = True
+        return cls("5 stars Hotel")
 
     def add_room(self, room):
         self.rooms.append(room)
@@ -99,4 +102,24 @@ class Hotel:
         return room[0].take_room(people)
 
     def free_room(self, room_number):
+        room = [r for r in self.rooms if r.number == room_number][0]
+        return room.free_room()
 
+
+hotel = Hotel.five_star_hotel()
+print(hotel.name)
+print(hotel.capacity)
+print(hotel.bar)
+hotel1 = Hotel("hostelche")
+print(hotel1.bar)
+# room1 = Room(1, 4)
+# room2 = Room(2, 4)
+# room3 = Room(3, 3)
+#
+# hotel.add_room(room1)
+# hotel.add_room(room2)
+# hotel.add_room(room3)
+#
+# print(hotel.take_room(1, 5))
+# print(hotel.take_room(1, 4))
+# print(room1.guest)
