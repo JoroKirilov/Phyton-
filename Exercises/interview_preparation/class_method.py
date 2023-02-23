@@ -1,0 +1,62 @@
+# class Shop:
+#     def __init__(self, name, type, capacity):
+#         self.name = name
+#         self.type = type
+#         self.capacity = capacity
+#
+#     @classmethod
+#     def small_shop(cls, name, type):
+#         return cls(name, type, capacity=10)
+#
+#     def __str__(self):
+#         return f"Shop '{self.name}' of type {self.type} is with {self.capacity} capacity"
+#
+#
+# shop1 = Shop("Diana", "nonstop", 10)
+# shop2 = Shop.small_shop("Iva", "nonstop")
+#
+# print(shop1)
+# print(shop2)
+
+
+class Person:
+    min_age = 0
+    max_age = 100
+    def __init__(self, name, sex, status):
+        self.name = name
+        self.sex = sex
+        self.__status = self.validate_status(status)
+
+    @staticmethod
+    def validate_status(status):
+        if status > 10:
+            return 100
+        return 0
+
+    @classmethod
+    def validate_age(cls):
+        return True if cls.min_age > 16 else False
+
+    def __str__(self):
+        return f"{self.__status} is status for person"
+
+class Worker(Person):
+    min_age = 17
+    max_age = 55
+    def __init__(self, name, sex, status, role):
+        super().__init__(name, sex, status)
+        self.role = role
+
+    def __str__(self):
+        return f"{self.min_age}"
+
+
+
+w = Worker("ivan", "male", 11,  "worker")
+print(w.validate_age())
+
+p = Person("IVAN", "FEMALE", 11)
+print(p)
+
+
+
