@@ -32,6 +32,7 @@ import itertools
 # print(next(repeat_time))
 
 
+
 # -------------- toto 6/49 all combinations -----------
 
 # list_toto = [i for i in range(1, 50)]
@@ -64,10 +65,10 @@ import itertools
 
 # ----------------------chain----------------------------------
 
-letters= ["a", "b", "c"]
-digits = [1, 2, 3]
-names = ["Monica", "Veronica"]
-# combined = letters + digits + names
-combined = itertools.chain(letters,digits,names)
-for item in combined:
-    print(item)
+# letters= ["a", "b", "c"]
+# digits = [1, 2, 3]
+# names = ["Monica", "Veronica"]
+# # combined = letters + digits + names
+# combined = itertools.chain(letters,digits,names)
+# for item in combined:
+#     print(item)
