@@ -28,3 +28,21 @@ n = 10
 list1 = [el + 1 for el in range(n)]
 fabonaci = list(itertools.accumulate(list1))
 print(fabonaci)
+n = 10
+list1 = [el for el in range(n + 1)]
+fibonaci = list(itertools.accumulate(list1 , ))
+print(fibonaci[-1])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
