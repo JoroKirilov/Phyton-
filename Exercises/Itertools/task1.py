@@ -126,3 +126,27 @@ import operator
 #
 # for key, value in dict1.items():
 #     print(f"{key} : {len(value)}")
+
+
+# ---------------the task with water barels -------------------
+#
+# from itertools import accumulate
+# # def waterArea(heights):
+# #     left_max = list(accumulate(heights, max))
+# #     right_max = list(reversed(list(accumulate(reversed(heights), max))))
+# #     depths = [min(lm, rm) for lm, rm in zip(left_max, right_max)]
+# #     water = sum(depths) - sum(heights)
+# #     return water
+# #
+# #
+# # water_list4 = [0, 100, 0, 0, 10, 1, 1, 10, 1, 0, 1, 1, 0, 0]
+# # print(waterArea(water_list4))
+#
+#
+# list_test = [1, 5, 3, 4, 0]
+# right_max = list(reversed(list(accumulate(reversed(list_test), max))))
+# print(right_max)
+# #
+# # # [1, 5, 5, 5, 5]
+# # # [5, 5, 3, 4, 0]
+# # # [1, 5, 3, 4, 0]
