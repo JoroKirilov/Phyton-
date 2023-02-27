@@ -12,14 +12,19 @@
 # ------------ fibonaci -----------------------
 
 # def fibonaci_num(n):
-#     a = 0
-#     b = 1
-#     result = 0
-#     for i in range(1, n + 1):
-#         result += a
-#         a, b = b, a + b
-#     return result
-# print(fibonaci_num(9))
+#     fib_list = [0, 1]
+#     for num in range(n - 1):
+#         num1 = fib_list[-1]
+#         num2 = fib_list[-2]
+#         sum = num1 + num2
+#         fib_list.append(sum)
+#     return fib_list
+#
+# print(fibonaci_num(10))
+
+
+
+
 
 # ---------- factoriel --------------
 # import math
@@ -57,4 +62,35 @@
 # a, b = b, a
 # print(a)
 
-# ------------------
+# ------------------ if fibonaci num -----------------
+
+#
+# def is_fibonaci(n):
+#     tmp_list = [0, 1]
+#     while tmp_list[-1] <= n:
+#         tmp_list.append(tmp_list[-1] + tmp_list[-2])
+#     if n in tmp_list:
+#         print(f"{n} is fibonaci number")
+#     else:
+#         print(f"{n} is not a fibonaci number")
+#     return tmp_list
+#
+# num = 55
+# list_fibonaci = is_fibonaci(num)
+# print(list_fibonaci)
+
+# --------------- cyrcle_area ----------------------
+
+# def find_area_of_cyrcle(r):
+#     PI = 3.14
+#     return PI * r ** 2
+#
+# r = 2
+# print(find_area_of_cyrcle(r))
+
+# -------------- calendar -------------------------------
+# import calendar
+# year = calendar.calendar(2023)
+# month = calendar.month(2023, 2)
+# print(month)
+# print(year)
