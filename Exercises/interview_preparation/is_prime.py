@@ -94,3 +94,31 @@
 # month = calendar.month(2023, 2)
 # print(month)
 # print(year)
+
+# ------------------- factoriel --------------------------
+# import math
+#
+# number = 5
+# print(math.factorial(number))
+
+
+# ------------------- all prime number in interval ---------
+
+# def prime_num(n):
+#     if n <= 1:
+#         return False
+#     for number in range(2, n):
+#         if n % number == 0:
+#             return False
+#     else:
+#         return True
+#
+# start = 10
+# end = 20
+# list_of_prime_numbers = []
+# for number in range(start, end):
+#     if prime_num(number):
+#         list_of_prime_numbers.append(number)
+#         print(f"{number} is prime")
+#     else:
+#         print(f"{number} in not a prime")
