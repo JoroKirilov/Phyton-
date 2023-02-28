@@ -140,10 +140,33 @@
 
 
 # 22) Write a Python Program to Convert Comma Separated List to a String.
+#
+# favorite_prog = ["Python", "SQL", "GO"]
+# programming_language = " ,".join(favorite_prog)
+# print(f"What is your favorite programming language: {programming_language}")
 
 
+# 23) Write a Python Program to Capitalize the First Letter of a String.
 
+# str1 = "I do sport in my free time. Try to spend more time with my children and my wife"
+# result = str1.split(" ")
+# new_str = ""
+# print(result)
+# for el in result:
+#     new_str += el[0].upper()
+#     new_str += el[1:]
+#     new_str += " "
+# print(new_str)
 
+# result_string = str1.title()
+# print(result_string)
+
+# 24) Write a Python Program to Implicit Type Conversion.
+
+# n = 9
+# b = 3.4
+# res = n + b
+# print(type(res))
 
 
 
