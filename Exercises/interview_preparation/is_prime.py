@@ -122,3 +122,44 @@
 #         print(f"{number} is prime")
 #     else:
 #         print(f"{number} in not a prime")
+
+
+# 21) Write a Python Program to Find Vowels From a String.
+
+# str = "Uadenjakfeapo"
+# result_str = ""
+# for char in str:
+#     if char.lower() in "aouei":
+#         result_str += char
+# print(result_str)
+
+# def get_vowels(text):
+#     return [vowels for vowels in text if vowels.lower() in "aoeui"]
+#
+# print("".join(get_vowels("fadfeAASADMOnjksn")))
+
+
+# 22) Write a Python Program to Convert Comma Separated List to a String.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
