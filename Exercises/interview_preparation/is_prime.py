@@ -23,9 +23,6 @@
 # print(fibonaci_num(10))
 
 
-
-
-
 # ---------- factoriel --------------
 # import math
 #
@@ -182,18 +179,19 @@
 # n = math.factorial(5)
 # print(n)
 
+# ------------------- map ---------------------
 
+# list_ints = ["23", "3", "3"]
+# try:
+#     n = list(map(int, list_ints))
+# except ValueError:
+#     print("N")
 
+# ----------------- filter -----------------------
 
-
-
-
-
-
-
-
-
-
+# list_with_elements = [1, 2, 3, 4, 5, 6, 7]
+# n = list(filter(lambda x: (x % 2 == 0), list_with_elements))
+# print(n)
 
 
 
