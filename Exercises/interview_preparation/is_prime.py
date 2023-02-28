@@ -167,9 +167,20 @@
 # b = 3.4
 # res = n + b
 # print(type(res))
-
-
-
+# import itertools
+# import math
+#
+# list_numbers = [el for el in range(1, 11)]
+# print(list_numbers)
+# print(sum(list_numbers))
+# fac = itertools.accumulate(list_numbers)
+# print(list(fac)[-1])
+# fib_list = [0, 1]
+# for i in range(1, 9):
+#     fib_list.append(fib_list[-1] + fib_list[-2])
+# print(fib_list)
+# n = math.factorial(5)
+# print(n)
 
 
 
