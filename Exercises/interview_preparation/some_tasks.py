@@ -58,6 +58,15 @@ import itertools
 # koko(a)
 # print(a)
 
-import this
+# str1 = "text.py"
+# print(dir(str1))
+# idx = str1.rfind(",")
+# print(str1[idx:])
 
-print(this)
+list_with_files = ["core.py", "lore.py", "ivan.txt", "koiepoponai.txt"]
+for el in list_with_files:
+    if el.endswith(".py"):
+        print(el)
+
+str2 = "gkirilov1987@abv.bg"
+str2 = str2.partition("@")
