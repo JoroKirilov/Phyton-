@@ -70,3 +70,4 @@ for el in list_with_files:
 
 str2 = "gkirilov1987@abv.bg"
 str2 = str2.partition("@")
+print(str2[0])
