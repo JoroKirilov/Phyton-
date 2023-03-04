@@ -11,15 +11,29 @@ def get_html_content(url):
     return req.content
 
 
-dict_with_data = {}
-soup = BeautifulSoup(get_html_content("https://www.ozone.bg/gaming/igri/ps4/"), "html.parser")
-list_of_games = soup.findAll("div", class_="col-xs-3 five-on-a-row")
-for game in list_of_games:
-    title = game.find("span", class_="title")
-    price = game.findAll("span", class_="price")
-    price_element = price[-1].text.strip().replace("\xa0лв.", "")
-    if not title.text.replace("(PS4) ", "") in dict_with_data:
-        dict_with_data[title.text.replace("(PS4)", "")] = price_element
+def get_next_page(soup_content):
+    next_page = soup_content.find("a", class_="next")
+    return next_page
 
-for key, value in dict_with_data.items():
-    print(f"{key} - {value} lv")
+
+def sraper():
+    dict_with_data = {}
+    next_page = "https://www.ozone.bg/gaming/igri/ps4/"
+    while next_page != "javascript:;":
+        soup = BeautifulSoup(get_html_content(next_page), "html.parser")
+        list_of_games = soup.findAll("div", class_="col-xs-3 five-on-a-row")
+        for game in list_of_games:
+            title = game.find("span", class_="title")
+            title = title.text.replace("(PS4)", "")
+            price = game.findAll("span", class_="price")
+            price_element = price[-1].text.strip().replace("\xa0лв.", "")
+            url = game.find("a", class_="product-box")["href"]
+            dict_with_data[title] = [price_element, url]
+        next_page = str(get_next_page(soup)["href"])
+
+    return dict_with_data
+
+
+games = dict(sorted(sraper().items(), key=lambda x: x))
+for key, value in games.items():
+    print(f"{key} - {value[0]} lv --- {value[1]}")
