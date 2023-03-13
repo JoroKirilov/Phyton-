@@ -33,7 +33,12 @@ def sraper():
 
     return dict_with_data
 
-
 games = dict(sorted(sraper().items(), key=lambda x: x))
-for key, value in games.items():
-    print(f"{key} - {value[0]} lv --- {value[1]}")
+with open("data.txt", "w", encoding="utf-8") as file:
+    for key, value in games.items():
+        file.write(f"{key} - {value[0]} lv --- {value[1]}\n")
+
+
+
+
+
