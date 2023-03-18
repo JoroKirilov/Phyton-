@@ -27,3 +27,4 @@ set1.discard(400)  # safety remove
 sort_set = sorted(set1)
 # set1.remove(500)
 print(sort_set)
+

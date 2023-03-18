@@ -1,8 +1,14 @@
-# tuple1 = (1, 2, 2.5, 5, 1, 4, 2.5, 5, 6, 6, 6, 8)
+tuple1 = ([2, 2], {'g': 1},  1, 2, 2.5, 5, 1, 4, 2.5, 5, 6, 6, 6, 8)
+tuple1[0][0] = 3
+tuple1[1]['g'] = 2
+print(tuple1[1])
 # tmp_dict = {}
 # for nums in tuple1:
 #     tmp_dict[nums] = tuple1.count(nums)
 # print(tmp_dict)
+#
+# n = tuple1.index(1)
+# print(n)
 #
 # dict1 = {}
 # dict1[1] = 4
@@ -10,22 +16,22 @@
 # dict1[1.1] = 4
 # print(dict1)
 
-dict1 = {}
-list_names = ["tete", "tete", "goso", "tete"]
-list_grades = [1, 2, 3, 45]
-for idx in range(len(list_names)):
-    if not list_names[idx] in dict1:
-        dict1[list_names[idx]] = []
-    dict1[list_names[idx]].append(list_grades[idx])
-print(dict1)
-
-result = 0
-for key, value in dict1.items():
-    for value1 in value:
-        result += value1
-    dict1[key] = result
-    result = 0
-
-
-print(dict1)
+# dict1 = {}
+# list_names = ["tete", "tete", "goso", "tete"]
+# list_grades = [1, 2, 3, 45]
+# for idx in range(len(list_names)):
+#     if not list_names[idx] in dict1:
+#         dict1[list_names[idx]] = []
+#     dict1[list_names[idx]].append(list_grades[idx])
+# print(dict1)
+#
+# result = 0
+# for key, value in dict1.items():
+#     for value1 in value:
+#         result += value1
+#     dict1[key] = result
+#     result = 0
+#
+#
+# print(dict1)
 

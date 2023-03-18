@@ -19,3 +19,13 @@ print(list1)
 list1.remove(2)
 list1.remove(1)
 print(list1)
+
+
+# list1 = [1, 2, 3, 4, 5]
+# target = 7
+# for i in range(len(list1) - 2):
+#     for y in range(i + 1, len(list1) - 1):
+#         for x in range(y + 1, len(list1)):
+#             if list1[i] + list1[y] + list1[x] is target:
+#                 print(f"{list1[i]}, {list1[y]}, {list1[x]}")
+
