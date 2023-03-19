@@ -4,7 +4,20 @@
 #
 # print(dir(math))
 #
-# list1 = [1, 2, 3, 2, [1, 2]]
+count1 = 0
+list1 = [1, 2, 3, [1, 1], 2, 3, [1, 2], [1, 1]]
+list1.insert(0, 22)
+for element in range(len(list1)):
+    if isinstance(list1[element], list):
+        count1 += 1
+print(count1)
+count = list1.count(3)
+
+for s in range(count):
+    print(s)
+    list1.remove(3)
+
+print(list1)
 # print(dir(list1))
 # # list1.clear()
 # print(list1)
@@ -14,7 +27,7 @@
 # print(list1.count(1))
 # print(list1.index(2))
 # print(list1.index(2, 1, 4))
-# list1.insert(1, 34)
+
 # print(list1)
 # list1.pop(1)
 # print(list1)
