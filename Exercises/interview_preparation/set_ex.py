@@ -6,6 +6,7 @@ set2 = {1, 2, 5, 6}
 print(set1.difference(set2))  # difference
 # set3 = set1 | set2
 set3 = set1.union(set2)
+
 print(set3)  # union
 
 set_intersection = set1.intersection(set2)
@@ -25,6 +26,13 @@ set1.add(44)
 set1.add(14)
 set1.discard(400)  # safety remove
 sort_set = sorted(set1)
-# set1.remove(500)
+set1.remove(500)
+print(set1)
 print(sort_set)
 
+
+se1 = {1, 2, 3, 43, 55}
+print(se1)
+a = se1.pop()
+print(se1)
+print(a)
