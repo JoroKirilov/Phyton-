@@ -4,20 +4,20 @@
 #
 # print(dir(math))
 #
-count1 = 0
-list1 = [1, 2, 3, [1, 1], 2, 3, [1, 2], [1, 1]]
-list1.insert(0, 22)
-for element in range(len(list1)):
-    if isinstance(list1[element], list):
-        count1 += 1
-print(count1)
-count = list1.count(3)
-
-for s in range(count):
-    print(s)
-    list1.remove(3)
-
-print(list1)
+# count1 = 0
+# list1 = [1, 2, 3, [1, 1], 2, 3, [1, 2], [1, 1]]
+# list1.insert(0, 22)
+# for element in range(len(list1)):
+#     if isinstance(list1[element], list):
+#         count1 += 1
+# print(count1)
+# count = list1.count(3)
+#
+# for s in range(count):
+#     print(s)
+#     list1.remove(3)
+#
+# print(list1)
 # print(dir(list1))
 # # list1.clear()
 # print(list1)
@@ -45,3 +45,6 @@ print(list1)
 # set1 = {1, 2, 3, int("4")}
 # set2 = {3, str(4)}
 # print(set1.union(set2))
+
+
+
