@@ -127,19 +127,54 @@
 # a = str.title()
 # print(a)
 
-def outer_function():
-    global num
-    num = 20
+# def outer_function():
+#     global num
+#     num = 20
+#
+#     def inner_function():
+#         global num
+#         num = 30
+#         print('num =', num)
+#
+#     inner_function()
+#     print('num =', num)
+#
+#
+# num = 10
+# outer_function()
+# print('num =', num)
 
-    def inner_function():
-        global num
-        num = 30
-        print('num =', num)
 
-    inner_function()
-    print('num =', num)
+# set1 = (1, 2, 3, 4, 5)
+# set2 = set1[1:2:]
+# for el in set2:
+#     print(el)
+
+# str1 = "fdfadfacdsaf"
+# s = str1[8:0:-1]
+# print(s)
+
+# dict1 = {"a": 10, "b": 2, "c": 3}
+# str1 = ""
+# for i in dict1:
+#     str1 = str1+str(dict1[i])+" "
+#     str2 = str1[:-1]
+# print(str2[::-1])
 
 
-num = 10
-outer_function()
-print('num =', num)
+# def arg_train(age, year=4, *args, **kwargs):
+#     print(args)
+#     print(year)
+#     print(f"ivan is {kwargs}")
+#     for i in args:
+#         print(i)
+#
+#
+# arg_train(1, 2, 3, 4, "afa", 5, ivan=5)
+#
+# try:
+#     x = 5 / 0
+# except ZeroDivisionError:
+#     print("Cannot divide by zero")
+# else:
+#     print("Division successful!")
