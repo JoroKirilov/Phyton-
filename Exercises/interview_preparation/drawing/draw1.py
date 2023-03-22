@@ -178,3 +178,18 @@
 #     print("Cannot divide by zero")
 # else:
 #     print("Division successful!")
+
+
+class Laptops:
+    def __init__(self, ram, gpu):
+        self.ram = ram
+        self.gpu = gpu
+
+    @classmethod
+    def gaming_laptop(cls):
+        return cls(ram=32, gpu=1023)
+
+
+
+l1 = Laptops.gaming_laptop()
+print(l1.ram)

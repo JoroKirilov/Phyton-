@@ -58,15 +58,17 @@ for ele in set1:
 print(dir(set1))
 
 
-def print_different(function):
-    def wrapper(a , b):
-        return function(a + 1, b + 1)
-    return wrapper
+# def print_different(function):
+#     def wrapper(a , b):
+#         return function(a + 1, b + 1)
+#     return wrapper
+#
+#
+# @print_different
+# def sum_nums(a, b):
+#     return a + b
+#
+#
+# print(sum_nums(1 , 1))
 
 
-@print_different
-def sum_nums(a, b):
-    return a + b
-
-
-print(sum_nums(1 , 1))
